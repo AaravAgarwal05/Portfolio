@@ -20,8 +20,7 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              title="visit"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -41,7 +40,7 @@ const RecentProjects = () => {
                   alt={`${item.title} preview`}
                   width={400}
                   height={300}
-                  className="z-10 absolute bottom-0 h-auto"
+                  className="z-10 absolute bottom-0 h-auto rotate-6 rounded-lg"
                 />
               </div>
 
@@ -80,7 +79,11 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center"
+                onClick={() => {
+                  window.open(item.link, "_blank");
+                }}
+                >
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                     Check Live Site
                   </p>
