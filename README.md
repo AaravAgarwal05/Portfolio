@@ -13,7 +13,7 @@
 
 ## 🚀 About The Project
 
-This is a modern portfolio website built with Next.js, showcasing my skills, education, and projects. The website features a sleek, responsive design with interactive elements and animations powered by Framer Motion and Three.js.
+This is a modern portfolio website originally built by JavaScript Mastery with Next.js and Customized by Me, showcasing my skills, education, and projects. The website features a sleek, responsive design with interactive elements and animations powered by Framer Motion and Three.js.
 
 ## ⚙️ Tech Stack
 
