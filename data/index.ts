@@ -97,14 +97,14 @@ export const projects = [
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://streamflix-smoky.vercel.app/",
   },
-  {
-    id: 4,
-    title: "PlantNation - A Fruits & Vegetables Ecommerce Website",
-    des: "An ecommerce website for buying fruits and vegetables directly from the farm built with Next.js, Tailwind CSS, and TypeScript.",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://plant-nation.vercel.app/",
-  },
+  // {
+  //   id: 4,
+  //   title: "PlantNation - A Fruits & Vegetables Ecommerce Website",
+  //   des: "An ecommerce website for buying fruits and vegetables directly from the farm built with Next.js, Tailwind CSS, and TypeScript.",
+  //   img: "/p4.svg",
+  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+  //   link: "https://plant-nation.vercel.app/",
+  // },
 ];
 
 export const testimonials = [
@@ -218,7 +218,13 @@ export const socialMedia = [
   },
   {
     id: 4,
-    img: "/link.svg",
+    img: "/insta.svg",
+    link: "https://instagram.com/aarav.agarwal05",
+    name: "Instagram",
+  },
+  {
+    id: 5,
+    img: "/codolio.svg",
     link: "https://codolio.com/profile/AaravAgarwal05",
     name: "Codolio",
   },
