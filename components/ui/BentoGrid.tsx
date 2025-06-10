@@ -13,6 +13,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import LeetCodeBadges from "../LeetcodeBadges";
 
 const BentoGrid = ({
   className,
@@ -68,6 +69,45 @@ const BentoGridItem = ({
     setIsClient(true);
   }, []);
 
+  useEffect(() => {
+    if (id !== 3 || !leftListRef.current || !rightListRef.current) return;
+
+    const leftEl = leftListRef.current;
+    const rightEl = rightListRef.current;
+
+    const scrollSpeed = 0.5;
+    let animationFrameId: number;
+
+    const animateScroll = () => {
+      if (!leftEl || !rightEl) return;
+
+      // Increment scroll position
+      leftEl.scrollTop += scrollSpeed;
+      rightEl.scrollTop += scrollSpeed;
+
+      // Create seamless loop
+      const leftScrollHeight = leftEl.scrollHeight - leftEl.clientHeight;
+      const rightScrollHeight = rightEl.scrollHeight - rightEl.clientHeight;
+
+      if (leftEl.scrollTop >= leftScrollHeight) {
+        leftEl.scrollTop = 0;
+      }
+      if (rightEl.scrollTop >= rightScrollHeight) {
+        rightEl.scrollTop = 0;
+      }
+
+      animationFrameId = requestAnimationFrame(animateScroll);
+    };
+
+    animationFrameId = requestAnimationFrame(animateScroll);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [id]);
+
   const handleCopy = () => {
     if (typeof navigator !== "undefined") {
       const text = "aarav.knp.08@gmail.com";
@@ -83,7 +123,6 @@ const BentoGridItem = ({
     setTimeout(() => {
       setDownloading(false);
 
-      // Keep confetti animation running for longer
       setTimeout(() => {
         setCopied(false);
       }, 2000);
@@ -161,35 +200,35 @@ const BentoGridItem = ({
               <div className="relative">
                 <div
                   ref={leftListRef}
-                  className="flex flex-col gap-3 md:gap-3 lg:gap-8 max-h-[300px] overflow-y-auto scrollbar-hide cursor-pointer scroll-smooth"
+                  className="flex flex-col gap-3 md:gap-3 lg:gap-8 max-h-[300px] overflow-hidden cursor-pointer"
                 >
-                  {leftLists.slice(0, 3).map((item, i) => (
+                  {[...leftLists, ...leftLists, ...leftLists].map((item, i) => (
                     <span
-                      key={i}
+                      key={`left-${i}`}
                       className="lg:py-4 lg:px-3 w-28 py-2 px-3 text-xs lg:text-base opacity-50 
-                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                      lg:opacity-100 rounded-lg text-center bg-[#10132E] transition-opacity duration-300"
                     >
                       {item}
                     </span>
                   ))}
-                  <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
                 </div>
               </div>
               <div className="relative">
                 <div
                   ref={rightListRef}
-                  className="flex flex-col gap-3 md:gap-3 lg:gap-8 max-h-[300px] overflow-y-auto scrollbar-hide cursor-pointer scroll-smooth"
+                  className="flex flex-col gap-3 md:gap-3 lg:gap-8 max-h-[300px] overflow-hidden cursor-pointer mt-[22px] md:mt-[26px] lg:mt-[42px]"
                 >
-                  <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
-                  {rightLists.slice(0, 3).map((item, i) => (
-                    <span
-                      key={i}
-                      className="lg:py-4 lg:px-3 py-2 px-3 w-28 text-xs lg:text-base opacity-50 
-                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {[...rightLists, ...rightLists, ...rightLists].map(
+                    (item, i) => (
+                      <span
+                        key={`right-${i}`}
+                        className="lg:py-4 lg:px-3 py-2 px-3 w-28 text-xs lg:text-base opacity-50 
+                      lg:opacity-100 rounded-lg text-center bg-[#10132E] transition-opacity duration-300"
+                      >
+                        {item}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -221,29 +260,20 @@ const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
+            <div className="relative h-full w-full">
+              <div className="absolute inset-0 flex items-center justify-center">
                 {isClient && (
                   <Lottie
                     animationData={animationData}
-                    loop={copied}
-                    autoplay={copied}
-                    style={{ height: 200, width: 400 }}
+                    loop={true}
+                    autoplay={true}
+                    style={{ height: "400%", width: "400%" }}
                   />
                 )}
               </div>
-
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
+              <div className="relative z-10 w-full mt-5 lg:mt-8">
+                <LeetCodeBadges username="AaravAgarwal05" />
+              </div>
             </div>
           )}
         </div>
