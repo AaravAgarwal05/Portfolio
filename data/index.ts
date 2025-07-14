@@ -5,7 +5,7 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const resumeLink = "/Aarav_Resume.pdf";
+export const resumeLink = "/Aarav_Agarwal_Resume.pdf";
 
 export const gridItems = [
   {
@@ -240,19 +240,31 @@ export const techStack = {
     "React",
     "Next.js",
     "HTML/CSS",
-    "Tailwind",
-  ],
-  rightColumn: [
+    "Tailwind CSS",
     "Node.js",
     "Express.js",
-    "API",
     "MongoDB",
-    "Mongoose",
+    "PostgreSQL",
     "MySQL",
+    "Mongoose",
     "Prisma",
+  ],
+  rightColumn: [
+    "REST APIs",
     "Docker",
-    "AWS S3",
+    "N8N",
     "FFmpeg",
+    "HLS Streaming",
+    "AWS IAM",
+    "AWS S3",
+    "AWS EC2",
+    "AWS Lambda",
+    "AWS Fargate",
+    "AWS RDS",
+    "Firebase",
+    "Cloudinary",
+    "Git",
+    "Vercel",
+    "Coolify",
   ],
 };
-
