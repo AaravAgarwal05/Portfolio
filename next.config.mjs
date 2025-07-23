@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "leetcode.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.hackerrank.com",
+        pathname: "/certificates/**",
+      }
     ],
   },
 };

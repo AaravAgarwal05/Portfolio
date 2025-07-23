@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "lottie-react";
 import { FaDownload } from "react-icons/fa";
 import Image from "next/image";
@@ -13,7 +12,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
-import LeetCodeBadges from "../LeetcodeBadges";
+import MyBadges from "../MyBadges";
 
 const BentoGrid = ({
   className,
@@ -271,8 +270,8 @@ const BentoGridItem = ({
                   />
                 )}
               </div>
-              <div className="relative z-10 w-full mt-5 lg:mt-8">
-                <LeetCodeBadges username="AaravAgarwal05" />
+              <div className="relative z-10 w-full  mt-5 lg:mt-8">
+                <MyBadges username="AaravAgarwal05" />
               </div>
             </div>
           )}

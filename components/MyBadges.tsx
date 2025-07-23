@@ -19,11 +19,11 @@ interface Badge {
   creationDate: string;
 }
 
-interface LeetCodeBadgesProps {
+interface MyBadgesProps {
   username: string;
 }
 
-const LeetCodeBadges = ({ username }: LeetCodeBadgesProps) => {
+const MyBadges = ({ username }: MyBadgesProps) => {
   const [badges, setBadges] = useState<Badge[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -83,7 +83,7 @@ const LeetCodeBadges = ({ username }: LeetCodeBadgesProps) => {
   }
 
   return (
-    <div>
+    <div className="flex justify-center items-center gap-4">
       {badges.map((badge) => (
         <div
           key={badge.id}
@@ -104,4 +104,4 @@ const LeetCodeBadges = ({ username }: LeetCodeBadgesProps) => {
   );
 };
 
-export default LeetCodeBadges;
+export default MyBadges;
