@@ -259,7 +259,7 @@ const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="relative h-full w-full">
+            <div className="relative flex-1 w-full h-full flex flex-col items-center justify-center">
               <div className="absolute inset-0 flex items-center justify-center">
                 {isClient && (
                   <Lottie
@@ -270,7 +270,7 @@ const BentoGridItem = ({
                   />
                 )}
               </div>
-              <div className="relative z-10 w-full  mt-5 lg:mt-8">
+              <div className="relative z-10 w-full flex justify-center">
                 <MyBadges username="AaravAgarwal05" />
               </div>
             </div>
