@@ -1,14 +1,12 @@
 import type { Config } from "tailwindcss";
-
-const svgToDataUri = require("mini-svg-data-uri");
-
-const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import svgToDataUri from "mini-svg-data-uri";
+import colors from "tailwindcss/colors";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import tailwindcssAnimate from "tailwindcss-animate";
+import tailwindScrollbarHide from "tailwind-scrollbar-hide";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -163,8 +161,8 @@ const config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    require("tailwind-scrollbar-hide"),
+    tailwindcssAnimate,
+    tailwindScrollbarHide,
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
