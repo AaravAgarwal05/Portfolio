@@ -102,22 +102,28 @@ const Card = ({
 
       <div className="relative z-20 px-10">
         <div
-          className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
-        group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center"
+          className={`text-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
+        transition duration-200 min-w-40 mx-auto flex items-center justify-center ${
+          hovered ? "opacity-0 -translate-y-4" : "opacity-100"
+        }`}
         >
           {icon}
         </div>
         <h2
-          className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white 
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
+          className={`dark:text-white text-center text-3xl opacity-0 
+         relative z-10 text-black mt-4  font-bold text-white 
+         transition duration-200 ${
+           hovered ? "opacity-100 -translate-y-2" : "opacity-0"
+         }`}
         >
           {title}
         </h2>
         <p
-          className="text-sm opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 mt-4 group-hover/canvas-card:text-white text-center
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
+          className={`text-sm opacity-0 
+         relative z-10 mt-4 text-white text-center
+         transition duration-200 ${
+           hovered ? "opacity-100 -translate-y-2" : "opacity-0"
+         }`}
           style={{ color: "#E4ECFF" }}
         >
           {des}

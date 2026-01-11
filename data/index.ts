@@ -14,7 +14,7 @@ export const gridItems = [
       "Architecting digital experiences — where code meets creativity 😎✨",
     description: "",
     className:
-      "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] aspect-square md:aspect-auto",
+      "lg:col-span-3 md:col-span-6 md:row-span-4 aspect-square",
     imgClassName: "w-full h-full",
     titleClassName:
       "justify-end aspect-square md:aspect-auto",

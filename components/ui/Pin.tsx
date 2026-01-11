@@ -20,12 +20,15 @@ export const PinContainer = ({
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
+  const [isPinned, setIsPinned] = useState(false);
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
+    setIsPinned(true);
   };
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
+    setIsPinned(false);
   };
 
   return (
@@ -36,6 +39,13 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={() => {
+        if (!isPinned) {
+          onMouseEnter();
+        } else {
+          onMouseLeave();
+        }
+      }}
     >
       <div
         style={{
@@ -53,7 +63,7 @@ export const PinContainer = ({
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
       </div>
-      <PinPerspective title={title} href={href} />
+      <PinPerspective title={title} href={href} isPinned={isPinned} />
     </div>
   );
 };
@@ -61,12 +71,19 @@ export const PinContainer = ({
 export const PinPerspective = ({
   title,
   href,
+  isPinned,
 }: {
   title?: string;
   href?: string;
+  isPinned?: boolean;
 }) => {
   return (
-    <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div
+      className={cn(
+        "pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500",
+        isPinned && "opacity-100"
+      )}
+    >
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <a
@@ -154,8 +171,18 @@ export const PinPerspective = ({
         </div>
 
         <>
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-cyan-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]" />
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-cyan-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40  " />
+          <motion.div
+            className={cn(
+              "absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-cyan-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]",
+              isPinned && "h-40"
+            )}
+          />
+          <motion.div
+            className={cn(
+              "absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-cyan-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40  ",
+              isPinned && "h-40"
+            )}
+          />
           <motion.div className="absolute right-1/2 translate-x-[1.5px] bottom-1/2 bg-cyan-600 translate-y-[14px] w-[4px] h-[4px] rounded-full z-40 blur-[3px]" />
           <motion.div className="absolute right-1/2 translate-x-[0.5px] bottom-1/2 bg-cyan-300 translate-y-[14px] w-[2px] h-[2px] rounded-full z-40 " />
         </>
