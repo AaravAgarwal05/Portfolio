@@ -80,7 +80,7 @@ export const projects = [
     img: "/p4.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://base62.aarav05.dev",
-    github: "https://github.com/AaravAgarwal05/plant-nation"
+    github: "https://github.com/AaravAgarwal05/plant-nation",
   },
   {
     id: 3,
@@ -89,7 +89,7 @@ export const projects = [
     img: "/p3.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://streamflix-smoky.vercel.app",
-    github: "https://github.com/AaravAgarwal05/streamflix"
+    github: "https://github.com/AaravAgarwal05/streamflix",
   },
   {
     id: 2,
@@ -98,7 +98,7 @@ export const projects = [
     img: "/p2.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://chat-app-one-smoky.vercel.app",
-    github: "https://github.com/AaravAgarwal05/chat-app"
+    github: "https://github.com/AaravAgarwal05/chat-app",
   },
   {
     id: 1,
@@ -107,7 +107,7 @@ export const projects = [
     img: "/p1.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://buy-me-a-cookie.vercel.app",
-    github: "https://github.com/AaravAgarwal05/buy-me-a-cookie"
+    github: "https://github.com/AaravAgarwal05/buy-me-a-cookie",
   },
 ];
 
