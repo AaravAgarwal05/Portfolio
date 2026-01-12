@@ -5,7 +5,7 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const resumeLink = "/Aarav_Agarwal_Resume.pdf";
+export const resumeLink = "/api/resume";
 
 export const gridItems = [
   {
@@ -178,21 +178,21 @@ export const companies = [
 export const education = [
   {
     id: 1,
-    title: "Bachelor of Technology in Computer Science",
-    desc: "Vellore Institute of Technology, Bhopal - GPA: 9.02/10.0",
+    title: "Bachelor of Technology in Computer Science & Engineering",
+    desc: "Vellore Institute of Technology, Bhopal - GPA: 9.05",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Senior Secondary School",
+    title: "Intermediate (Class XII) in Science Stream (PCM)",
     desc: "Swaraj India Public School, Kanpur - 93.8%",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "High School",
+    title: "Matriculate (Class X) in Science Stream (PCMB)",
     desc: "Swaraj India Public School, Kanpur - 92.6%",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
