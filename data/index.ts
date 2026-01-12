@@ -13,11 +13,9 @@ export const gridItems = [
     title:
       "Architecting digital experiences — where code meets creativity 😎✨",
     description: "",
-    className:
-      "lg:col-span-3 md:col-span-6 md:row-span-4 aspect-square",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 aspect-square",
     imgClassName: "w-full h-full",
-    titleClassName:
-      "justify-end aspect-square md:aspect-auto",
+    titleClassName: "justify-end aspect-square md:aspect-auto",
     img: "/MySelf.png",
     spareImg: "",
   },
@@ -64,7 +62,7 @@ export const gridItems = [
   },
   {
     id: 5,
-    title: "Currently building a AI powered Mental Health App",
+    title: "Currently building a Blockchain based Land Registry System",
     description: "The Inside Scoop",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -76,37 +74,41 @@ export const gridItems = [
 
 export const projects = [
   {
-    id: 1,
-    title: "Buy Me a Cookie",
-    des: "A simple and elegant donation website built with Next.js, Tailwind CSS, and TypeScript.",
-    img: "/p1.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://buy-me-a-cookie.vercel.app/",
+    id: 4,
+    title: "Base62",
+    des: "Engineered a high-performance URL shortening service implementing Base62 encoding for optimal link compression, featuring real-time analytics and scalable architecture with Next.js and TypeScript.",
+    img: "/p4.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://base62.aarav05.dev",
+    github: "https://github.com/AaravAgarwal05/plant-nation"
+  },
+  {
+    id: 3,
+    title: "Streamflix",
+    des: "Developed a high-performance video streaming platform leveraging HLS protocols for adaptive bitrate streaming, ensuring seamless media playback and responsive grid layouts with Next.js and Tailwind CSS.",
+    img: "/p3.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "https://streamflix-smoky.vercel.app",
+    github: "https://github.com/AaravAgarwal05/streamflix"
   },
   {
     id: 2,
     title: "Chat App",
-    des: "A chat application built with Next.js, Tailwind CSS, and TypeScript.",
+    des: "Built a real-time messaging application featuring instant data synchronization and responsive UI, utilizing Stream SDK and modern React patterns for a seamless communication experience.",
     img: "/p2.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://chat-app-one-smoky.vercel.app/",
+    link: "https://chat-app-one-smoky.vercel.app",
+    github: "https://github.com/AaravAgarwal05/chat-app"
   },
   {
-    id: 3,
-    title: "Streamflix - A HLS based Streaming Service",
-    des: "A streaming service using hls to stream movies and tv shows built with Next.js, Tailwind CSS, and TypeScript.",
-    img: "/p3.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://streamflix-smoky.vercel.app/",
+    id: 1,
+    title: "Buy Me a Cookie",
+    des: "Designed a user-centric micro-donation platform facilitating creator support, implementing secure transaction flows and interactive UI components with Next.js and Framer Motion.",
+    img: "/p1.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://buy-me-a-cookie.vercel.app",
+    github: "https://github.com/AaravAgarwal05/buy-me-a-cookie"
   },
-  // {
-  //   id: 4,
-  //   title: "PlantNation - A Fruits & Vegetables Ecommerce Website",
-  //   des: "An ecommerce website for buying fruits and vegetables directly from the farm built with Next.js, Tailwind CSS, and TypeScript.",
-  //   img: "/p4.svg",
-  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-  //   link: "https://plant-nation.vercel.app/",
-  // },
 ];
 
 export const testimonials = [

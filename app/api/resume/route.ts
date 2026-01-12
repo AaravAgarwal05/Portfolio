@@ -29,7 +29,7 @@ export async function GET() {
       // Redirect to the Google Drive View Link
       // webViewLink is the link to view the file in Google Drive
       if (file.webViewLink) {
-         return NextResponse.redirect(file.webViewLink);
+        return NextResponse.redirect(file.webViewLink);
       }
     }
 

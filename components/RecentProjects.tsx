@@ -19,33 +19,20 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer
-              title="visit"
-              href={item.link}
-            >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
+            <PinContainer title={item.des}>
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-auto mb-10">
+                <div className="relative w-full overflow-hidden lg:rounded-3xl bg-[#13162D]">
                   <Image
-                    src="/bg.png"
-                    alt="background"
-                    fill
-                    sizes="(max-width: 640px) 80vw, 384px"
-                    className="object-cover"
+                    src={item.img}
+                    alt={item.title}
+                    width={550}
+                    height={350}
+                    className="w-full h-full object-cover lg:rounded-3xl"
                   />
                 </div>
-                <Image
-                  src={item.img}
-                  alt={`${item.title} preview`}
-                  width={400}
-                  height={300}
-                  className="z-10 absolute bottom-0 h-auto rotate-6 rounded-lg"
-                />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base ">
                 {item.title}
               </h1>
 
@@ -56,7 +43,11 @@ const RecentProjects = () => {
                   margin: "1vh 0",
                 }}
               >
-                {item.des}
+                {" "}
+                Check Codebase:<br/>
+                <a href={item.github} target="_blank" rel="noopener noreferrer">
+                  {item.github.split("https://github.com/").pop()}
+                </a>
               </p>
 
               <div className="flex items-center justify-between mt-7 mb-3">
@@ -80,13 +71,14 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center"
-                onClick={() => {
-                  window.open(item.link, "_blank");
-                }}
+                <div
+                  className="flex justify-center items-center"
+                  onClick={() => {
+                    window.open(item.link, "_blank");
+                  }}
                 >
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    Experience Live
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
