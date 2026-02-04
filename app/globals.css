@@ -81,4 +81,101 @@
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+
+  /* Performance optimizations */
+  .gpu-acceleration {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Skeleton loading animation */
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize font rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent layout shift */
+  .prevent-shift {
+    min-height: 100vh;
+    content-visibility: auto;
+  }
+
+  /* Loading state styles */
+  .loading-placeholder {
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Wavy progress bar animations */
+  .wavy-progress {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wavy-progress::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shimmer 2s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  .wave-glow {
+    filter: drop-shadow(0 0 8px rgba(120, 119, 198, 0.5));
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+@layer critical {
+  .critical-content {
+    contain: layout;
+    content-visibility: auto;
+  }
 }

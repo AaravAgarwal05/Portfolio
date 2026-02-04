@@ -1,0 +1,25 @@
+{
+  "name": "Aarav's Portfolio",
+  "short_name": "Portfolio",
+  "description": "Next.js Portfolio for a creative developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#7877c6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/a&a-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/a&a-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "developer", "web"],
+  "lang": "en",
+  "dir": "ltr"
+}
